@@ -97,13 +97,14 @@ alias c="clear"
 alias code="cd ~/code"
 alias edp="ember divshot push"
 alias gf="git fetch --all -p -v"
+alias hhr="cd ~/code/happyhourradio"
 alias ls="ls -alGh"
 alias nbd="cd ~/code/nbdlabel"
 alias npmreset="rm -rf node_modules && npm cache clean && npm install"
 alias q="exit"
 alias skyrkt="cd ~/code/skyrocket"
 
-function mkdircd() {
+function mkdircd {
   mkdir -p "$@" && cd "$_";
 }
 
