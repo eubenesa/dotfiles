@@ -111,10 +111,6 @@ alias npmreset="rm -rf node_modules && npm cache clean && npm install"
 alias q="exit"
 alias skyrkt="cd ~/code/skyrocket"
 
-function mkdircd {
-  mkdir -p "$@" && cd "$_";
-}
-
 function updateembercli {
   npm uninstall -g ember-cli
   npm cache clean
@@ -139,6 +135,7 @@ function fixpow {
 function update {
   upgrade_oh_my_zsh
   bubu
+  brew cask cleanup
   gem update --system
   gem update
   gem cleanup -v
