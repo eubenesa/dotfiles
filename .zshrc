@@ -46,6 +46,8 @@ COMPLETION_WAITING_DOTS="true"
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
 
+export HOMEBREW_CASK_OPTS="--appdir=/Applications"
+
 export RBENV_ROOT=/usr/local/var/rbenv
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
@@ -61,12 +63,11 @@ fpath=(/usr/local/share/zsh-completions $fpath)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(bower brew bundler colored-man colorize copydir copyfile cp dirhistory ember-cli gem git github grunt history last-working-dir node npm osx postgres pow powify rails rake rbenv ruby ssh-agent sublime sudo xcode zsh-syntax-highlighting)
+plugins=(bower brew-cask brew bundler colored-man colorize copydir copyfile cp dirhistory ember-cli gem git github grunt history last-working-dir node npm osx postgres pow powify rails rake rbenv ruby ssh-agent sublime sudo xcode zsh-syntax-highlighting)
 
 # User configuration
 
-# export PATH="/usr/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
-# export PATH="$PATH:./bin"
+# export PATH=$HOME/bin:/usr/local/bin:$PATH
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
