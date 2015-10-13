@@ -110,6 +110,14 @@ alias npmreset="rm -rf node_modules && npm cache clean && npm install"
 alias q="exit"
 alias skyrkt="cd ~/code/skyrocket"
 
+function er {
+  rm -rf node_modules bower_components dist tmp
+  npm cache clean
+  npm install
+  bower cache clean
+  bower install
+}
+
 function updateembercli {
   npm uninstall -g ember-cli
   npm cache clean
