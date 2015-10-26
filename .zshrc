@@ -101,7 +101,7 @@ alias blog="cd ~/code/eubenesa.github.io"
 alias bowerreset="rm -rf bower_components && bower cache clean && bower install"
 alias c="clear"
 alias code="cd ~/code"
-alias edp="ember divshot push"
+alias dp="divshot push"
 alias eo="npm outdated && bower list"
 alias gf="git fetch --all -p -v"
 alias ls="ls -alGh"
@@ -116,6 +116,8 @@ function er {
   npm install
   bower cache clean
   bower install
+  eb
+  es
 }
 
 function updateembercli {
@@ -145,7 +147,6 @@ function update {
   brew cask cleanup
   gem update --system
   gem update
-  gem cleanup -v
   npm outdated -g
 }
 
