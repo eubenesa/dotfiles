@@ -63,7 +63,7 @@ fpath=(/usr/local/share/zsh-completions $fpath)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(bower brew-cask brew bundler colored-man colorize copydir copyfile cp dirhistory ember-cli gem git github grunt heroku history last-working-dir node npm osx postgres pow powify rails rake rbenv ruby ssh-agent sublime sudo xcode zsh-syntax-highlighting)
+plugins=(bower brew-cask brew bundler colored-man colorize copydir copyfile cp dirhistory ember-cli gem git github grunt heroku history last-working-dir node npm osx postgres pow powify rails rake rbenv ruby ssh-agent sublime sudo vagrant xcode zsh-syntax-highlighting)
 
 # User configuration
 
@@ -105,6 +105,7 @@ alias eo="npm outdated && bower list"
 alias gf="git fetch --all -p -v"
 alias ls="ls -alGh"
 alias nbd="cd ~/code/nbdlabel"
+alias nbdstaging="heroku config:set REBUILD_ALL=true && heroku plugins:install https://github.com/heroku/heroku-repo.git && heroku repo:purge_cache -a nbdlabel-staging && git push heroku master && heroku config:unset REBUILD_ALL"
 alias npmreset="rm -rf node_modules && npm cache clean && npm install"
 alias q="exit"
 alias skyrkt="cd ~/code/skyrocket"
