@@ -94,7 +94,7 @@ export SSH_KEY_PATH="~/.ssh/id_rsa"
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-alias zshconfig="subl ~/.zshrc"
+alias zshconfig="atom ~/.zshrc"
 alias zshsource="source ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias blog="cd ~/code/eubenesa.github.io"
@@ -102,10 +102,8 @@ alias bowerreset="rm -rf bower_components && bower cache clean && bower install"
 alias c="clear"
 alias code="cd ~/code"
 alias eo="npm outdated && bower list"
-alias gf="git fetch --all -p -v"
 alias ls="ls -alGh"
 alias nbd="cd ~/code/nbdlabel"
-alias nbdstaging="heroku config:set REBUILD_ALL=true && heroku plugins:install https://github.com/heroku/heroku-repo.git && heroku repo:purge_cache -a nbdlabel-staging && git push heroku master && heroku config:unset REBUILD_ALL"
 alias npmreset="rm -rf node_modules && npm cache clean && npm install"
 alias q="exit"
 alias skyrkt="cd ~/code/skyrocket"
@@ -118,18 +116,6 @@ function er {
   bower install
   eb
   es
-}
-
-function updateembercli {
-  npm uninstall -g ember-cli
-  npm cache clean
-  bower cache clean
-  npm install -g ember-cli@latest
-  rm -rf node_modules bower_components dist tmp
-  npm install --save-dev ember-cli@latest
-  npm install
-  bower install
-  ember init
 }
 
 function fixpow {
