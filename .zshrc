@@ -106,7 +106,6 @@ alias ls="ls -alGh"
 alias nbd="cd ~/code/nbdlabel"
 alias npmreset="rm -rf node_modules && npm cache clean && npm install"
 alias q="exit"
-alias skyrkt="cd ~/code/skyrocket"
 
 function er {
   rm -rf node_modules bower_components dist tmp
