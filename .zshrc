@@ -63,7 +63,7 @@ fpath=(/usr/local/share/zsh-completions $fpath)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(bower brew-cask brew bundler colored-man colorize copydir copyfile cp dirhistory docker docker-compose ember-cli gem git github grunt heroku history last-working-dir meteor node npm osx postgres pow powify rails rake rbenv ruby ssh-agent sublime sudo xcode zsh-syntax-highlighting)
+plugins=(bower brew-cask brew bundler colored-man colorize copydir copyfile cp dirhistory docker docker-compose ember-cli gem git git-extras github grunt heroku history last-working-dir meteor node npm osx postgres pow powify rails rake rbenv ruby ssh-agent sudo xcode zsh-syntax-highlighting)
 
 # User configuration
 
@@ -132,6 +132,7 @@ function update {
   brew cask cleanup
   gem update --system
   gem update
+  gem cleanup -V
   npm outdated -g
 }
 
