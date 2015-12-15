@@ -102,12 +102,13 @@ alias bowerreset="rm -rf bower_components && bower cache clean && bower install"
 alias c="clear"
 alias code="cd ~/code"
 alias eo="npm outdated && bower list"
+alias gt="git tag"
 alias ls="ls -alGh"
 alias nbd="cd ~/code/nbdlabel"
 alias npmreset="rm -rf node_modules && npm cache clean && npm install"
 alias q="exit"
 
-function er {
+er() {
   rm -rf node_modules bower_components dist tmp
   npm cache clean
   npm install
@@ -117,7 +118,7 @@ function er {
   es
 }
 
-function fixpow {
+fixpow() {
   brew uninstall pow
   brew install pow
   sudo pow --install-system
@@ -126,7 +127,12 @@ function fixpow {
   lunchy start pow
 }
 
-function update {
+gbump() {
+  gcmsg "Bump to $1"
+  gt -a $1 -m "Bump version $1"
+}
+
+update() {
   upgrade_oh_my_zsh
   bubu
   brew cask cleanup
