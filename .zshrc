@@ -49,7 +49,7 @@ COMPLETION_WAITING_DOTS="true"
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
 export RBENV_ROOT=/usr/local/var/rbenv
-if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+eval "$(rbenv init -)"
 
 LUNCHY_DIR=$(dirname `gem which lunchy`)/../extras
 if [ -f $LUNCHY_DIR/lunchy-completion.zsh ]; then
