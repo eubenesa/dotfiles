@@ -1,20 +1,13 @@
 [user]
-	name = Eubene Sa
-	email = eubene.sa@gmail.com
+  name = Eubene Sa
+  email = eubene.sa@gmail.com
+[branch]
+  autosetuprebase = always
 [color]
-	ui = true
+  ui = true
 [core]
-	excludesfile = /Users/esa/.gitignore_global
+  excludesfile = /Users/esa/.gitignore_global
 [credential]
-	helper = osxkeychain
-[difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path =
-[merge]
-	tool = sublime
-[mergetool "sourcetree"]
-	cmd = /opt/homebrew-cask/Caskroom/sourcetree/2.0.5.2/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
-[mergetool "sublime"]
-	cmd = subl -w $MERGED
-	trustExitCode = false
+  helper = osxkeychain
+[push]
+  default = simple
