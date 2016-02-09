@@ -68,6 +68,7 @@ plugins=(bower brew-cask brew bundler colored-man colorize copydir copyfile cp d
 # User configuration
 
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=/Users/esa/.themekit:$PATH
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
@@ -108,6 +109,7 @@ alias gt="git tag"
 alias ls="ls -alGh"
 alias nbd="cd ~/code/nbdlabel"
 alias npmreset="rm -rf node_modules && npm cache clean && npm install"
+alias pxu="cd ~/code/pixelunion"
 alias q="exit"
 
 er() {
