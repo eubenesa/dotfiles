@@ -1,11 +1,9 @@
 bundler
 compass
 foreman
-jekyll
 lunchy
 powify
 pry
-rails
 sass
-shopify_theme
+scss_lint
 zeus
