@@ -5,7 +5,7 @@ export ZSH=/Users/esa/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="ys"
+ZSH_THEME="agnoster"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -56,6 +56,9 @@ if [ -f $LUNCHY_DIR/lunchy-completion.zsh ]; then
   . $LUNCHY_DIR/lunchy-completion.zsh
 fi
 
+export NVM_DIR="$HOME/.nvm"
+. "$(brew --prefix nvm)/nvm.sh"
+
 fpath=(/usr/local/share/zsh-completions $fpath)
 
 
@@ -63,11 +66,13 @@ fpath=(/usr/local/share/zsh-completions $fpath)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(bower brew-cask brew bundler colored-man colorize copydir copyfile cp dirhistory docker docker-compose ember-cli gem git git-extras github grunt heroku history last-working-dir meteor node npm osx postgres pow powify rails rake rbenv ruby ssh-agent sudo xcode zsh-syntax-highlighting)
+plugins=(bower brew-cask brew bundler colored-man colorize composer copydir copyfile cp dirhistory docker docker-compose ember-cli gem git git-extras github grunt heroku history last-working-dir node npm nvm osx postgres pow powify rails rake rbenv ruby ssh-agent sudo xcode zsh-syntax-highlighting)
 
 # User configuration
 
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH="/usr/local/sbin:$PATH"
+export PATH="$(brew --prefix homebrew/php/php70)/bin:$PATH"
 export PATH=/Users/esa/.themekit:$PATH
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -95,7 +100,7 @@ export SSH_KEY_PATH="~/.ssh/id_rsa"
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-alias zshconfig="atom ~/.zshrc"
+alias zshconfig="subl ~/.zshrc"
 alias zshsource="source ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias blog="cd ~/code/eubenesa.github.io"
@@ -108,14 +113,14 @@ alias eo="npm outdated && bower list"
 alias gt="git tag"
 alias ls="ls -alGh"
 alias nbd="cd ~/code/nbdlabel"
-alias npmreset="rm -rf node_modules && npm cache clean && npm install"
-alias pxu="cd ~/code/pixelunion"
+alias npmreset="rm -rf node_modules && npm cache clean && npm i"
 alias q="exit"
+alias weather="curl http://wttr.in/vancouver"
 
 er() {
   rm -rf node_modules bower_components dist tmp
   npm cache clean
-  npm install
+  npm i
   bower cache clean
   bower install
   eb
