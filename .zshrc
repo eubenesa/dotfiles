@@ -71,8 +71,8 @@ plugins=(bower brew-cask brew bundler colored-man colorize composer copydir copy
 # User configuration
 
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
-export PATH="/usr/local/sbin:$PATH"
 export PATH="$(brew --prefix homebrew/php/php70)/bin:$PATH"
+export PATH="/usr/local/sbin:$PATH"
 export PATH=/Users/esa/.themekit:$PATH
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -152,3 +152,5 @@ update() {
 }
 
 export TERM=vt100
+
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
