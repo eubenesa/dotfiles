@@ -8,10 +8,10 @@ export ZSH=$HOME/.oh-my-zsh
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="bullet-train"
+BULLETTRAIN_STATUS_EXIT_SHOW=true
 BULLETTRAIN_TIME_12HR=true
 BULLETTRAIN_NVM_SHOW=true
 BULLETTRAIN_GIT_COLORIZE_DIRTY=true
-BULLETTRAIN_EXEC_TIME_SHOW=true
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -92,7 +92,7 @@ alias code="cd ~/code"
 alias ls="ls -alGh"
 alias gcob="gco -b"
 alias grbim="grbi master"
-alias moon="curl http://wttr.in/moon"
+alias moon="curl wttr.in/moon"
 alias npmcc="npm cache clean"
 alias npmOg="npmO -g"
 alias npmrC="npm run connect:watch"
@@ -101,7 +101,7 @@ alias npmreI="rm -rf node_modules && npm cache clean && npm i"
 alias npmrS="npm run styles:watch"
 alias npmrT="npm run test:watch"
 alias q="exit"
-alias weather="curl http://wttr.in/boston?m"
+alias weather="curl wttr.in/Boston?m"
 alias update="weather && moon && upgrade_oh_my_zsh && bubu && brew cask cleanup && npmOg"
 
 export TERM="vt100"
@@ -115,6 +115,6 @@ if [ -f $LUNCHY_DIR/lunchy-completion.zsh ]; then
 fi
 
 export NVM_DIR="$HOME/.nvm"
-. "$(brew --prefix nvm)/nvm.sh"
+. "/usr/local/opt/nvm/nvm.sh"
 
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
