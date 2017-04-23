@@ -1,9 +1,3 @@
-bundler
 compass
-foreman
 lunchy
-powify
-pry
 sass
-scss_lint
-zeus

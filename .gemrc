@@ -1,2 +1,2 @@
 :benchmark: false
-gem: --no-rdoc --no-ri
+gem: --no-document

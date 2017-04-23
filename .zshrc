@@ -1,11 +1,17 @@
-# Path to your oh-my-zsh installation.
-export ZSH=/Users/esa/.oh-my-zsh
+# If you come from bash you might have to change your $PATH.
+# export PATH=$HOME/bin:/usr/local/bin:$PATH
 
-# Set name of the theme to load.
-# Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
-# time that oh-my-zsh is loaded.
-ZSH_THEME="agnoster"
+# Path to your oh-my-zsh installation.
+export ZSH=$HOME/.oh-my-zsh
+
+# Set name of the theme to load. Optionally, if you set this to "random"
+# it'll load a random theme each time that oh-my-zsh is loaded.
+# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
+ZSH_THEME="bullet-train"
+BULLETTRAIN_TIME_12HR=true
+BULLETTRAIN_NVM_SHOW=true
+BULLETTRAIN_GIT_COLORIZE_DIRTY=true
+BULLETTRAIN_EXEC_TIME_SHOW=true
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -45,38 +51,17 @@ COMPLETION_WAITING_DOTS="true"
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
-
-export HOMEBREW_CASK_OPTS="--appdir=/Applications"
-
-export RBENV_ROOT=/usr/local/var/rbenv
-eval "$(rbenv init -)"
-
-LUNCHY_DIR=$(dirname `gem which lunchy`)/../extras
-if [ -f $LUNCHY_DIR/lunchy-completion.zsh ]; then
-  . $LUNCHY_DIR/lunchy-completion.zsh
-fi
-
-export NVM_DIR="$HOME/.nvm"
-. "$(brew --prefix nvm)/nvm.sh"
-
-fpath=(/usr/local/share/zsh-completions $fpath)
-
-
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(bower brew-cask brew bundler colored-man colorize composer copydir copyfile cp dirhistory docker docker-compose ember-cli gem git git-extras github grunt heroku history last-working-dir node npm nvm osx postgres pow powify rails rake rbenv ruby ssh-agent sudo xcode zsh-syntax-highlighting)
+plugins=(brew-cask brew colored-man colorize command-not-found copydir copyfile cp dirhistory git git-extras github grunt history jira last-working-dir man node npm nvm osx react-native ssh-agent sublime sudo vagrant xcode yarn)
+
+source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
-export PATH="$(brew --prefix homebrew/php/php70)/bin:$PATH"
-export PATH="/usr/local/sbin:$PATH"
-export PATH=/Users/esa/.themekit:$PATH
 # export MANPATH="/usr/local/man:$MANPATH"
-
-source $ZSH/oh-my-zsh.sh
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -101,56 +86,35 @@ export SSH_KEY_PATH="~/.ssh/id_rsa"
 #
 # Example aliases
 alias zshconfig="subl ~/.zshrc"
-alias zshsource="source ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias blog="cd ~/code/eubenesa.github.io"
-alias bowerreset="rm -rf bower_components && bower cache clean && bower install"
 alias c="clear"
 alias code="cd ~/code"
-alias edd="ember deploy development"
-alias eds="ember deploy staging"
-alias eo="npm outdated && bower list"
-alias gt="git tag"
 alias ls="ls -alGh"
-alias nbd="cd ~/code/nbdlabel"
-alias npmreset="rm -rf node_modules && npm cache clean && npm i"
+alias gcob="gco -b"
+alias grbim="grbi master"
+alias moon="curl http://wttr.in/moon"
+alias npmcc="npm cache clean"
+alias npmOg="npmO -g"
+alias npmrC="npm run connect:watch"
+alias npmrD="npm run dev"
+alias npmreI="rm -rf node_modules && npm cache clean && npm i"
+alias npmrS="npm run styles:watch"
+alias npmrT="npm run test:watch"
 alias q="exit"
-alias weather="curl http://wttr.in/vancouver"
+alias weather="curl http://wttr.in/boston?m"
+alias update="weather && moon && upgrade_oh_my_zsh && bubu && brew cask cleanup && npmOg"
 
-er() {
-  rm -rf node_modules bower_components dist tmp
-  npm cache clean
-  npm i
-  bower cache clean
-  bower install
-  eb
-  es
-}
+export TERM="vt100"
 
-fixpow() {
-  brew uninstall pow
-  brew install pow
-  sudo pow --install-system
-  pow --install-local
-  lunchy stop pow
-  lunchy start pow
-}
+fpath=(/usr/local/share/zsh-completions $fpath)
+rm -f ~/.zcompdump; compinit
 
-gbump() {
-  gcmsg "Bump to $1"
-  gt -a $1 -m "Bump version $1"
-}
+LUNCHY_DIR=$(dirname `gem which lunchy`)/../extras
+if [ -f $LUNCHY_DIR/lunchy-completion.zsh ]; then
+  . $LUNCHY_DIR/lunchy-completion.zsh
+fi
 
-update() {
-  upgrade_oh_my_zsh
-  bubu
-  brew cask cleanup
-  gem update --system
-  gem update
-  gem cleanup -V
-  npm outdated -g
-}
-
-export TERM=vt100
+export NVM_DIR="$HOME/.nvm"
+. "$(brew --prefix nvm)/nvm.sh"
 
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
