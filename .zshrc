@@ -55,7 +55,7 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(brew-cask brew colored-man colorize command-not-found copydir copyfile cp dirhistory git git-extras github grunt history jira last-working-dir man node npm nvm osx react-native ssh-agent sublime sudo vagrant xcode yarn)
+plugins=(brew coffee colored-man-pages colorize command-not-found copydir copyfile cp dirhistory emoji-clock emoji gem git-extras git github grunt history-substring-search history httpie jira last-working-dir man node npm nvm osx ruby ssh-agent sublime sudo vagrant xcode yarn)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -101,7 +101,7 @@ alias npmreI="rm -rf node_modules && npm cache clean && npm i"
 alias npmrS="npm run styles:watch"
 alias npmrT="npm run test:watch"
 alias q="exit"
-alias weather="curl wttr.in/Boston?m"
+alias weather="curl -H 'Accept-Language: ko' wttr.in?m"
 alias update="weather && moon && upgrade_oh_my_zsh && bubu && brew cask cleanup && npmOg"
 
 export TERM="vt100"
