@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH=$HOME/.oh-my-zsh
+export ZSH=/Users/esa/.oh-my-zsh
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -55,7 +55,7 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(brew coffee colored-man-pages colorize command-not-found copydir copyfile cp dirhistory emoji-clock emoji gem git-extras git github grunt history-substring-search history httpie jira last-working-dir man node npm nvm osx ruby ssh-agent sublime sudo vagrant xcode yarn)
+plugins=(brew coffee colored-man-pages colorize command-not-found copydir copyfile cp dirhistory emoji-clock emoji gem git-extras git-flow git github grunt history-substring-search history jira last-working-dir man node npm nvm osx ruby ssh-agent sublime sudo vagrant xcode yarn zsh-wakatime)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -85,7 +85,7 @@ export SSH_KEY_PATH="~/.ssh/id_rsa"
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-alias zshconfig="subl ~/.zshrc"
+alias zshconfig="nvim ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias c="clear"
 alias code="cd ~/code"
@@ -101,13 +101,14 @@ alias npmreI="rm -rf node_modules && npm cache clean && npm i"
 alias npmrS="npm run styles:watch"
 alias npmrT="npm run test:watch"
 alias q="exit"
-alias weather="curl -H 'Accept-Language: ko' wttr.in?m"
-alias update="weather && moon && upgrade_oh_my_zsh && bubu && brew cask cleanup && npmOg"
+alias weather="curl wttr.in?m"
+alias update="weather && upgrade_oh_my_zsh && bubu && brew cask cleanup && brew cask outdated && npmOg"
 
 export TERM="vt100"
 
+ulimit -n 10240
+
 fpath=(/usr/local/share/zsh-completions $fpath)
-rm -f ~/.zcompdump; compinit
 
 LUNCHY_DIR=$(dirname `gem which lunchy`)/../extras
 if [ -f $LUNCHY_DIR/lunchy-completion.zsh ]; then
@@ -117,4 +118,5 @@ fi
 export NVM_DIR="$HOME/.nvm"
 . "/usr/local/opt/nvm/nvm.sh"
 
+source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
