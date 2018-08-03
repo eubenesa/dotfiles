@@ -1,0 +1,16 @@
+{
+  "debug": false,
+  "prettier_cli_path": "/Users/esa/.nvm/versions/node/v10.8.0/bin/prettier",
+  "node_path": "/Users/esa/.nvm/versions/node/v10.8.0/bin/node",
+  "auto_format_on_save": false,
+  "allow_inline_formatting": true,
+  "prettier_options": {
+    "printWidth": 80,
+    "singleQuote": true,
+    "trailingComma": "none",
+    "bracketSpacing": true,
+    "jsxBracketSameLine": false,
+    "parser": "babylon",
+    "semi": true
+  }
+}

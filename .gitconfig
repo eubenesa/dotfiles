@@ -1,13 +1,21 @@
 [user]
-  name = Eubene Sa
-  email = eubene.sa@gmail.com
-[branch]
-  autosetuprebase = always
+	name = Eubene Sa
+	email = eubene.sa@gmail.com
 [color]
-  ui = true
+	ui = true
 [core]
-  excludesfile = /Users/esa/.gitignore_global
-[credential]
-  helper = osxkeychain
-[push]
-  default = simple
+	editor = code -w
+	excludesfile = /Users/esa/.gitignore_global
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[filter "lfs"]
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+[commit]
+	template = /Users/esa/.stCommitMsg
