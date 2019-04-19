@@ -2,10 +2,11 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/esa/.oh-my-zsh
+export ZSH=$HOME/.oh-my-zsh
 
-# Set name of the theme to load. Optionally, if you set this to "random"
-# it'll load a random theme each time that oh-my-zsh is loaded.
+# Set name of the theme to load --- if set to "random", it will
+# load a random theme each time oh-my-zsh is loaded, in which case,
+# to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="bullet-train"
 BULLETTRAIN_STATUS_EXIT_SHOW=true
@@ -13,11 +14,17 @@ BULLETTRAIN_TIME_12HR=true
 BULLETTRAIN_NVM_SHOW=true
 BULLETTRAIN_GIT_COLORIZE_DIRTY=true
 
+# Set list of themes to pick from when loading at random
+# Setting this variable when ZSH_THEME=random will cause zsh to load
+# a theme from this variable instead of looking in ~/.oh-my-zsh/themes/
+# If set to an empty array, this variable will have no effect.
+# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
+
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
-# Uncomment the following line to use hyphen-insensitive completion. Case
-# sensitive completion must be off. _ and - will be interchangeable.
+# Uncomment the following line to use hyphen-insensitive completion.
+# Case-sensitive completion must be off. _ and - will be interchangeable.
 # HYPHEN_INSENSITIVE="true"
 
 # Uncomment the following line to disable bi-weekly auto-update checks.
@@ -45,17 +52,60 @@ COMPLETION_WAITING_DOTS="true"
 
 # Uncomment the following line if you want to change the command execution time
 # stamp shown in the history command output.
-# The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
+# You can set one of the optional three formats:
+# "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
+# or set a custom format using the strftime function format specifications,
+# see 'man strftime' for details.
 # HIST_STAMPS="mm/dd/yyyy"
 
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
+# Which plugins would you like to load?
+# Standard plugins can be found in ~/.oh-my-zsh/plugins/*
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(battery brew coffee colored-man-pages colorize command-not-found copybuffer copydir copyfile cp dirhistory emoji-clock emoji frontend-search gem git-extras git-flow git github gitignore grunt history-substring-search history jira last-working-dir lighthouse man node npm nvm osx ruby ssh-agent sublime sudo vagrant xcode yarn zsh-wakatime)
+plugins=(
+  battery
+  brew
+  colored-man-pages
+  colorize
+  command-not-found
+  copybuffer
+  copydir
+  copyfile
+  cp
+  dircycle
+  dirhistory
+  dirpersist
+  emoji-clock
+  emoji
+  frontend-search
+  gem
+  git-extras
+  git-flow
+  git
+  github
+  gitignore
+  history-substring-search
+  history
+  jira
+  last-working-dir
+  lighthouse
+  man
+  node
+  npm
+  nvm
+  osx
+  ruby
+  ssh-agent
+  sudo
+  xcode
+  yarn
+  # zsh-wakatime
+  zsh_reload
+)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -85,12 +135,11 @@ export SSH_KEY_PATH="~/.ssh/id_rsa"
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-alias zshconfig="code ~/.zshrc"
+alias zshconfig="code-insiders ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias c="clear"
-alias dev="cd ~/code"
+alias code="cd ~/code"
 alias ls="ls -alGh"
-alias gcob="gco -b"
 alias grbim="grbi master"
 alias moon="curl wttr.in/moon"
 alias npmcc="npm cache clean"
@@ -98,16 +147,14 @@ alias npmOg="npmO -g"
 alias npmrei="rm -rf node_modules package-lock.json npm-debug.log && npmcc --force && npm i"
 alias q="exit"
 alias reyarn="rm -rf node_modules yarn.lock yarn-error.log && ycc && y"
-alias update="cd && coinmon -c usd && weather && upgrade_oh_my_zsh && bubu && brew cask cleanup && brew cask outdated && nvm ls-remote | grep 'Latest LTS\|v10.' && nvm use default && npmOg"
-alias weather="curl wttr.in/boston?m"
+alias update="cd && coinmon -c usd && weather && upgrade_oh_my_zsh && bubu && nvm ls-remote | grep 'Latest LTS\|v11.' && nvm use default && npmOg"
+alias weather="curl wttr.in"
 alias yad="ya --dev"
 alias yb="y build"
 alias yst="y start"
 alias yt="y test"
 
 export TERM="vt100"
-
-ulimit -n 10240
 
 fpath=(/usr/local/share/zsh-completions $fpath)
 
@@ -154,11 +201,6 @@ export TTC_REPOS="/Users/esa/code"
 # the directory depth, the slower the results will be fetched.
 export TTC_REPOS_DEPTH=2
 
-# Which method is to be used to read the git commits ('gitstandup' | 'gitlog').
-# If you're having problems seeing your commits in the dahsboard, set
-# this value to gitlog.
-export TTC_GITBOT="gitlog"
-
 # Location/zip code to check the weather for. Both 90210 and "San Francisco, CA"
 # _should_ be ok (the zip code doesn't always work -- use a location
 # first, if you can). It's using weather.service.msn.com behind the curtains.
@@ -187,10 +229,15 @@ export TTC_ACCESS_TOKEN_SECRET=""
 # API keys were the ones before. As of 1.0.8, they are deprecated
 # (because the names are too generic), but will still be supported
 # until the next major version.
-# export CONSUMER_KEY="..."
-# export CONSUMER_SECRET="..."
-# export ACCESS_TOKEN="..."
-# export ACCESS_TOKEN_SECRET="..."
+# export CONSUMER_KEY='...'
+# export CONSUMER_SECRET='...'
+# export ACCESS_TOKEN='...'
+# export ACCESS_TOKEN_SECRET='...'
+
+# Default pomodoro is 20 minutes and default break is 5 minutes.
+# You can change these defaults like this.
+export TTC_POMODORO=20
+export TTC_BREAK=5
 
 source /usr/local/opt/git-extras/share/git-extras/git-extras-completion.zsh
 source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh

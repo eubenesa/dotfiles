@@ -1,9 +1,6 @@
 {
   "[git-commit]": {
-    "editor.rulers": [
-      50,
-      72
-    ]
+    "editor.rulers": [50, 72]
   },
   "bracketPairColorizer.forceIterationColorCycle": true,
   "css.lint.boxModel": "warning",
@@ -28,7 +25,7 @@
   "editor.cursorStyle": "block",
   "editor.detectIndentation": false,
   "editor.dragAndDrop": false,
-  "editor.fontFamily": "'Operator Mono Lig'",
+  "editor.fontFamily": "'Dank Mono'",
   "editor.fontLigatures": true,
   "editor.fontSize": 16,
   "editor.formatOnPaste": true,
@@ -38,22 +35,19 @@
   "editor.minimap.showSlider": "always",
   "editor.multiCursorModifier": "ctrlCmd",
   "editor.renderWhitespace": "boundary",
-  "editor.rulers": [
-    80,
-    120
-  ],
+  "editor.rulers": [80, 120],
   "editor.scrollBeyondLastLine": false,
   "editor.selectionHighlight": false,
   "editor.smoothScrolling": true,
   "editor.snippetSuggestions": "top",
   "editor.suggestFontSize": 16,
   "editor.suggestLineHeight": 25,
-  "editor.tabCompletion": true,
+  "editor.tabCompletion": "on",
   "editor.tabSize": 2,
   "emmet.showSuggestionsAsSnippets": true,
   "emmet.triggerExpansionOnTab": true,
   "eslint.autoFixOnSave": true,
-  "eslint.nodePath": "/Users/esa/.nvm/versions/node/v10.7.0/lib/node_modules",
+  "eslint.nodePath": "/Users/esa/.nvm/versions/node/v10.15.0/lib/node_modules",
   "explorer.openEditors.visible": 4,
   "files.exclude": {
     ".DS_Store": true,
@@ -61,8 +55,6 @@
     ".sass-cache": true,
     // "build": true,
     "coverage": true,
-    // "css": true,
-    // "js": true,
     "node_modules": true,
     "npm-debug.log": true,
     "package-lock.json": true,
@@ -79,8 +71,6 @@
   "git.path": "/usr/local/bin/git",
   "html.format.indentHandlebars": true,
   "html.format.wrapLineLength": 80,
-  "html.suggest.angular1": false,
-  "html.suggest.ionic": false,
   "jake.autoDetect": "off",
   "markdown.preview.fontFamily": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
   "markdown.preview.fontSize": 16,
@@ -94,7 +84,6 @@
   "openInGitHub.gitHubDomain": "github.com",
   "openInGitHub.providerType": "github",
   "prettier.eslintIntegration": true,
-  "prettier.singleQuote": true,
   "scss.lint.boxModel": "warning",
   "scss.lint.compatibleVendorPrefixes": "error",
   "scss.lint.duplicateProperties": "error",
@@ -111,14 +100,12 @@
   "scss.lint.unknownVendorSpecificProperties": "error",
   "scss.lint.vendorPrefix": "error",
   "scss.lint.zeroUnits": "error",
-  "sync.autoUpload": true,
+  "sync.autoUpload": false,
   "sync.gist": "f9ad414cdd898a274e3a07f003df7df7",
-  "sync.lastDownload": "2017-12-27T01:47:20.301Z",
-  "sync.lastUpload": "2018-07-30T18:45:58.881Z",
-  "sync.quietSync": true,
+  "sync.quietSync": false,
   "terminal.integrated.cursorBlinking": true,
   "terminal.integrated.cursorStyle": "block",
-  "terminal.integrated.fontFamily": "'Operator Mono Lig', 'Fira Mono for Powerline'",
+  "terminal.integrated.fontFamily": "'Dank Mono', 'Source Code Pro for Powerline'",
   "terminal.integrated.fontSize": 16,
   "window.closeWhenEmpty": true,
   "window.newWindowDimensions": "inherit",
@@ -140,8 +127,6 @@
   "sync.askGistName": false,
   "sync.autoDownload": false,
   "sync.forceDownload": false,
-  "sync.host": "",
-  "sync.pathPrefix": "",
   "sync.removeExtensions": true,
   "sync.syncExtensions": true,
   "gitlens.advanced.messages": {
@@ -154,9 +139,11 @@
     "suppressResultsExplorerNotice": false,
     "suppressShowKeyBindingsNotice": true
   },
-  "gitlens.historyExplorer.enabled": true,
   "terminal.integrated.rendererType": "dom",
   "javascript.updateImportsOnFileMove.enabled": "always",
   "explorer.confirmDelete": false,
-  "explorer.confirmDragAndDrop": false
+  "explorer.confirmDragAndDrop": false,
+  "breadcrumbs.enabled": true,
+  "gitlens.views.fileHistory.enabled": true,
+  "gitlens.views.lineHistory.enabled": true
 }
