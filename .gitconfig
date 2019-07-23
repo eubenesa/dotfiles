@@ -1,8 +1,10 @@
 [color]
   ui = true
+[commit]
+  template = /Users/eubene/.stCommitMsg
 [core]
   editor = code-insiders -w
-  excludesfile = /Users/esa/.gitignore_global
+  excludesfile = /Users/eubene/.gitignore_global
 [difftool "sourcetree"]
   cmd = opendiff \"$LOCAL\" \"$REMOTE\"
   path =
