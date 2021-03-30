@@ -1,8 +1,4 @@
 {
-  "[git-commit]": {
-    "editor.rulers": [50, 72]
-  },
-  "bracketPairColorizer.forceIterationColorCycle": true,
   "css.lint.boxModel": "warning",
   "css.lint.compatibleVendorPrefixes": "error",
   "css.lint.duplicateProperties": "error",
@@ -21,21 +17,26 @@
   "css.lint.zeroUnits": "error",
   "debug.inlineValues": true,
   "debug.openExplorerOnEnd": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
   "editor.cursorBlinking": "phase",
   "editor.cursorStyle": "block",
   "editor.detectIndentation": false,
   "editor.dragAndDrop": false,
-  "editor.fontFamily": "'Dank Mono'",
+  "editor.fontFamily": "'Fantasque Sans Mono'",
   "editor.fontLigatures": true,
   "editor.fontSize": 16,
-  "editor.formatOnPaste": true,
-  "editor.formatOnSave": true,
+  "editor.formatOnPaste": false,
   "editor.lineHeight": 25,
   "editor.minimap.maxColumn": 80,
   "editor.minimap.showSlider": "always",
   "editor.multiCursorModifier": "ctrlCmd",
   "editor.renderWhitespace": "boundary",
-  "editor.rulers": [80, 120],
+  "editor.rulers": [
+    80,
+    120
+  ],
   "editor.scrollBeyondLastLine": false,
   "editor.selectionHighlight": false,
   "editor.smoothScrolling": true,
@@ -46,28 +47,15 @@
   "editor.tabSize": 2,
   "emmet.showSuggestionsAsSnippets": true,
   "emmet.triggerExpansionOnTab": true,
-  "eslint.autoFixOnSave": true,
-  "eslint.nodePath": "/Users/esa/.nvm/versions/node/v10.15.0/lib/node_modules",
+  "eslint.nodePath": "/Users/eubenesa/.nvm/versions/node/v14.16.0/lib/node_modules",
+  "explorer.confirmDelete": false,
+  "explorer.confirmDragAndDrop": false,
   "explorer.openEditors.visible": 4,
-  "files.exclude": {
-    ".DS_Store": true,
-    ".git": true,
-    ".sass-cache": true,
-    // "build": true,
-    "coverage": true,
-    "node_modules": true,
-    "npm-debug.log": true,
-    "package-lock.json": true,
-    "webdriver": true,
-    "yarn.lock": true,
-    "yarn-error.log": true
-  },
   "files.hotExit": "onExitAndWindowClose",
   "files.insertFinalNewline": true,
   "files.trimTrailingWhitespace": true,
-  "files.useExperimentalFileWatcher": true,
   "git.autofetch": true,
-  "git.defaultCloneDirectory": "/Users/esa/code",
+  "git.defaultCloneDirectory": "/Users/eubenesa/code",
   "git.path": "/usr/local/bin/git",
   "html.format.indentHandlebars": true,
   "html.format.wrapLineLength": 80,
@@ -79,11 +67,10 @@
   "material-icon-theme.folders.theme": "classic",
   "material-icon-theme.showUpdateMessage": false,
   "material-icon-theme.showWelcomeMessage": false,
-  "npm.enableScriptExplorer": true,
   "npm.packageManager": "yarn",
   "openInGitHub.gitHubDomain": "github.com",
   "openInGitHub.providerType": "github",
-  "prettier.eslintIntegration": true,
+  // "prettier.requireConfig": true,
   "scss.lint.boxModel": "warning",
   "scss.lint.compatibleVendorPrefixes": "error",
   "scss.lint.duplicateProperties": "error",
@@ -100,58 +87,116 @@
   "scss.lint.unknownVendorSpecificProperties": "error",
   "scss.lint.vendorPrefix": "error",
   "scss.lint.zeroUnits": "error",
-  "sync.autoUpload": false,
+  "sync.autoDownload": false,
+  "sync.autoUpload": true,
+  "sync.forceDownload": false,
   "sync.gist": "f9ad414cdd898a274e3a07f003df7df7",
   "sync.quietSync": false,
+  "sync.removeExtensions": true,
+  "sync.syncExtensions": true,
   "terminal.integrated.cursorBlinking": true,
   "terminal.integrated.cursorStyle": "block",
-  "terminal.integrated.fontFamily": "'Dank Mono', 'Source Code Pro for Powerline'",
+  "terminal.integrated.fontFamily": "'Fantasque Sans Mono', 'Source Code Pro for Powerline'",
   "terminal.integrated.fontSize": 16,
   "window.closeWhenEmpty": true,
   "window.newWindowDimensions": "inherit",
   "window.restoreWindows": "all",
   "window.title": "${rootName}${separator}${activeEditorMedium}${separator}${dirty}",
   "window.zoomLevel": 0,
-  "workbench.colorTheme": "Night Owl",
+  "workbench.colorTheme": "Framer Syntax",
   "workbench.fontAliasing": "antialiased",
   "workbench.iconTheme": "material-icon-theme",
   "workbench.startupEditor": "newUntitledFile",
-  "[html]": {
-    "editor.formatOnPaste": false,
-    "editor.formatOnSave": false
+  "[git-commit]": {
+    "editor.rulers": [
+      50,
+      72
+    ]
   },
-  "[json]": {
-    "editor.formatOnPaste": false,
-    "editor.formatOnSave": false
+  "editor.tokenColorCustomizations": {
+    "textMateRules": [
+      {
+        "scope": "text.html.markdown.journal.task.open.bullet",
+        "settings": {
+          "foreground": "#FFFF00"
+        }
+      },
+      {
+        "scope": "text.html.markdown.journal.task.open.marker",
+        "settings": {
+          "foreground": "#FFFF00"
+        }
+      },
+      {
+        "scope": "text.html.markdown.journal.task.open.keyword",
+        "settings": {
+          "fontStyle": "italic"
+        }
+      },
+      {
+        "scope": "text.html.markdown.journal.task.open.text",
+        "settings": {}
+      },
+      {
+        "scope": "text.html.markdown.journal.task.completed.keyword",
+        "settings": {
+          "fontStyle": "italic"
+        }
+      },
+      {
+        "scope": "text.html.markdown.journal.task.completed.marker",
+        "settings": {
+          "foreground": "#AAAAAA"
+        }
+      },
+      {
+        "scope": "text.html.markdown.journal.task.completed.text",
+        "settings": {
+          "foreground": "#AAAAAA"
+        }
+      },
+      {
+        "scope": "text.html.markdown.journal.task.completed.bullet",
+        "settings": {
+          "foreground": "#FFFF00"
+        }
+      },
+      {
+        "scope": "text.html.markdown.journal.memo.keyword",
+        "settings": {
+          "fontStyle": "italic"
+        }
+      },
+      {
+        "scope": "text.html.markdown.journal.memo.bullet",
+        "settings": {
+          "foreground": "#FFFF00"
+        }
+      },
+      {
+        "scope": "text.html.markdown.journal.scope",
+        "settings": {
+          "foreground": "#FFFF00"
+        }
+      },
+      {
+        "scope": "text.html.markdown.journal.link.keyword",
+        "settings": {
+          "fontStyle": "italic"
+        }
+      },
+      {
+        "scope": "text.html.markdown.journal.link.bullet",
+        "settings": {
+          "foreground": "#FFFF00"
+        }
+      }
+    ]
   },
-  "sync.askGistName": false,
-  "sync.autoDownload": false,
-  "sync.forceDownload": false,
-  "sync.removeExtensions": true,
-  "sync.syncExtensions": true,
-  "gitlens.advanced.messages": {
-    "suppressCommitHasNoPreviousCommitWarning": false,
-    "suppressCommitNotFoundWarning": false,
-    "suppressFileNotUnderSourceControlWarning": false,
-    "suppressGitVersionWarning": false,
-    "suppressLineUncommittedWarning": false,
-    "suppressNoRepositoryWarning": false,
-    "suppressResultsExplorerNotice": false,
-    "suppressShowKeyBindingsNotice": true
-  },
-  "terminal.integrated.rendererType": "dom",
-  "javascript.updateImportsOnFileMove.enabled": "always",
-  "explorer.confirmDelete": false,
-  "explorer.confirmDragAndDrop": false,
-  "breadcrumbs.enabled": true,
-  "gitlens.views.fileHistory.enabled": true,
-  "gitlens.views.lineHistory.enabled": true,
-  "prettier.singleQuote": true,
+  "journal.dev": false,
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "[typescriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "cSpell.userWords": ["currentpageindex"]
+  "editor.formatOnSaveMode": "modifications",
+  "editor.defaultFormatter": "esbenp.prettier-vscode"
 }

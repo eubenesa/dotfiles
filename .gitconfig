@@ -1,20 +1,30 @@
 [color]
   ui = true
+[color "diff"]
+  commit = yellow bold
+  frag = magenta bold
+  meta = yellow
+  new = green bold
+  old = red bold
+  whitespace = red reverse
+[color "diff-highlight"]
+  newHighlight = green bold 22
+  newNormal = green bold
+  oldHighlight = red bold 52
+  oldNormal = red bold
 [commit]
-  template = /Users/eubene/.stCommitMsg
+  template = /Users/eubenesa/.stCommitMsg
 [core]
-  editor = code-insiders -w
-  excludesfile = /Users/eubene/.gitignore_global
+  editor = code -w
+  excludesfile = /Users/eubenesa/.gitignore_global
+  pager = diff-so-fancy | less --tabs=2 -RFX
+[diff-so-fancy]
+  first-run = false
 [difftool "sourcetree"]
   cmd = opendiff \"$LOCAL\" \"$REMOTE\"
   path =
-[filter "lfs"]
-  clean = git-lfs clean -- %f
-  process = git-lfs filter-process
-  required = true
-  smudge = git-lfs smudge -- %f
 [mergetool "sourcetree"]
-  cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+  cmd = /Applications/Sourcetree-Beta.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
   trustExitCode = true
 [user]
   email = eubene.sa@gmail.com

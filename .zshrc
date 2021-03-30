@@ -11,7 +11,6 @@ export ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="bullet-train"
 BULLETTRAIN_STATUS_EXIT_SHOW=true
 BULLETTRAIN_TIME_12HR=true
-BULLETTRAIN_NVM_SHOW=true
 BULLETTRAIN_GIT_COLORIZE_DIRTY=true
 
 # Set list of themes to pick from when loading at random
@@ -30,8 +29,14 @@ BULLETTRAIN_GIT_COLORIZE_DIRTY=true
 # Uncomment the following line to disable bi-weekly auto-update checks.
 DISABLE_AUTO_UPDATE="true"
 
+# Uncomment the following line to automatically update without prompting.
+# DISABLE_UPDATE_PROMPT="true"
+
 # Uncomment the following line to change how often to auto-update (in days).
 # export UPDATE_ZSH_DAYS=13
+
+# Uncomment the following line if pasting URLs and other text is messed up.
+# DISABLE_MAGIC_FUNCTIONS=true
 
 # Uncomment the following line to disable colors in ls.
 # DISABLE_LS_COLORS="true"
@@ -79,18 +84,19 @@ plugins=(
   dircycle
   dirhistory
   dirpersist
+  dotenv
   emoji-clock
   emoji
+  fancy-ctrl-z
   frontend-search
-  gem
-  git-extras
-  git-flow
+  git-auto-fetch
   git
   github
   gitignore
   history-substring-search
   history
   jira
+  jsontools
   last-working-dir
   lighthouse
   man
@@ -98,12 +104,16 @@ plugins=(
   npm
   nvm
   osx
-  ruby
-  ssh-agent
+  per-directory-history
+  # ssh-agent
+  sublime
   sudo
-  xcode
+  systemd
+  urltools
+  vscode
+  web-search
   yarn
-  # zsh-wakatime
+  zsh-navigation-tools
   zsh_reload
 )
 
@@ -126,19 +136,15 @@ source $ZSH/oh-my-zsh.sh
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
-# ssh
-export SSH_KEY_PATH="~/.ssh/id_rsa"
-
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-alias zshconfig="code-insiders ~/.zshrc"
+alias zshconfig="code ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias c="clear"
-alias code="cd ~/code"
 alias ls="ls -alGh"
 alias grbim="grbi master"
 alias moon="curl wttr.in/moon"
@@ -147,24 +153,13 @@ alias npmOg="npmO -g"
 alias npmrei="rm -rf node_modules package-lock.json npm-debug.log && npmcc --force && npm i"
 alias q="exit"
 alias reyarn="rm -rf node_modules yarn.lock yarn-error.log && ycc && y"
-alias update="cd && coinmon -c usd && weather && upgrade_oh_my_zsh && bubu && nvm ls-remote | grep 'Latest LTS\|v11.' && nvm use default && npmOg"
+alias update="cd && weather && omz update && bubu && brew outdated --cask; nvm ls-remote | grep 'Latest LTS\|v15.' && nvm use stable && npmOg"
 alias weather="curl wttr.in"
-alias yad="ya --dev"
-alias yb="y build"
-alias yst="y start"
-alias yt="y test"
 
-export TERM="vt100"
-
-fpath=(/usr/local/share/zsh-completions $fpath)
-
-LUNCHY_DIR=$(dirname `gem which lunchy`)/../extras
-if [ -f $LUNCHY_DIR/lunchy-completion.zsh ]; then
-  . $LUNCHY_DIR/lunchy-completion.zsh
-fi
+export PATH="/usr/local/opt/curl/bin:$PATH"
 
 export NVM_DIR="$HOME/.nvm"
-. "/usr/local/opt/nvm/nvm.sh"
+[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
 autoload -U add-zsh-hook
 load-nvmrc() {
   local node_version="$(nvm version)"
@@ -186,6 +181,19 @@ load-nvmrc() {
 add-zsh-hook chpwd load-nvmrc
 load-nvmrc
 
+source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+if type brew &>/dev/null; then
+  FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
+
+  autoload -Uz compinit
+  compinit
+fi
+
+source /usr/local/share/zsh-history-substring-search/zsh-history-substring-search.zsh
+source /usr/local/share/zsh-navigation-tools/zsh-navigation-tools.plugin.zsh
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
 # List of accounts to read the last tweet from, comma separated
 # The first in the list is read by the party parrot.
 export TTC_BOTS="tinycarebot,selfcare_bot,magicrealismbot"
@@ -194,7 +202,7 @@ export TTC_BOTS="tinycarebot,selfcare_bot,magicrealismbot"
 export TTC_SAY_BOX="parrot"
 
 # List of folders to look into for `git` commits, comma separated.
-export TTC_REPOS="/Users/esa/code"
+export TTC_REPOS="~/code"
 
 # The max directory-depth to look for git repositories in
 # the directories defined with `TTC_REPOS`. Note that the deeper
@@ -238,7 +246,3 @@ export TTC_ACCESS_TOKEN_SECRET=""
 # You can change these defaults like this.
 export TTC_POMODORO=20
 export TTC_BREAK=5
-
-source /usr/local/opt/git-extras/share/git-extras/git-extras-completion.zsh
-source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
