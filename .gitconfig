@@ -13,10 +13,10 @@
   oldHighlight = red bold 52
   oldNormal = red bold
 [commit]
-  template = /Users/eubenesa/.stCommitMsg
+  template = /Users/esa/.stCommitMsg
 [core]
   editor = code -w
-  excludesfile = /Users/eubenesa/.gitignore_global
+  excludesfile = /Users/esa/.gitignore_global
   pager = diff-so-fancy | less --tabs=2 -RFX
 [diff-so-fancy]
   first-run = false
@@ -27,5 +27,7 @@
   cmd = /Applications/Sourcetree-Beta.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
   trustExitCode = true
 [user]
-  email = eubene.sa@gmail.com
+  email = esa@cargurus.com
   name = Eubene Sa
+[init]
+  defaultBranch = main

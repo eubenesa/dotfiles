@@ -1,42 +1,27 @@
 {
-  "css.lint.boxModel": "warning",
-  "css.lint.compatibleVendorPrefixes": "error",
-  "css.lint.duplicateProperties": "error",
-  "css.lint.emptyRules": "error",
-  "css.lint.float": "warning",
-  "css.lint.fontFaceProperties": "error",
-  "css.lint.idSelector": "warning",
-  "css.lint.ieHack": "error",
-  "css.lint.important": "warning",
-  "css.lint.importStatement": "warning",
-  "css.lint.propertyIgnoredDueToDisplay": "error",
-  "css.lint.universalSelector": "warning",
-  "css.lint.unknownProperties": "error",
-  "css.lint.unknownVendorSpecificProperties": "error",
-  "css.lint.vendorPrefix": "error",
-  "css.lint.zeroUnits": "error",
-  "debug.inlineValues": true,
-  "debug.openExplorerOnEnd": true,
-  "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true
+  "[git-commit]": {
+    "editor.rulers": [50, 72]
   },
+  "editor.acceptSuggestionOnEnter": "on",
+  "editor.bracketPairColorization.enabled": true,
   "editor.cursorBlinking": "phase",
   "editor.cursorStyle": "block",
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.detectIndentation": false,
   "editor.dragAndDrop": false,
-  "editor.fontFamily": "'Fantasque Sans Mono'",
+  "editor.foldingImportsByDefault": true,
+  "editor.fontFamily": "'Operator Mono', monospace",
   "editor.fontLigatures": true,
   "editor.fontSize": 16,
-  "editor.formatOnPaste": false,
+  "editor.formatOnPaste": true,
+  "editor.formatOnSave": true,
+  "editor.guides.bracketPairs": "active",
   "editor.lineHeight": 25,
   "editor.minimap.maxColumn": 80,
   "editor.minimap.showSlider": "always",
   "editor.multiCursorModifier": "ctrlCmd",
   "editor.renderWhitespace": "boundary",
-  "editor.rulers": [
-    80,
-    120
-  ],
+  "editor.rulers": [120, 80],
   "editor.scrollBeyondLastLine": false,
   "editor.selectionHighlight": false,
   "editor.smoothScrolling": true,
@@ -47,7 +32,6 @@
   "editor.tabSize": 2,
   "emmet.showSuggestionsAsSnippets": true,
   "emmet.triggerExpansionOnTab": true,
-  "eslint.nodePath": "/Users/eubenesa/.nvm/versions/node/v14.16.0/lib/node_modules",
   "explorer.confirmDelete": false,
   "explorer.confirmDragAndDrop": false,
   "explorer.openEditors.visible": 4,
@@ -55,148 +39,30 @@
   "files.insertFinalNewline": true,
   "files.trimTrailingWhitespace": true,
   "git.autofetch": true,
-  "git.defaultCloneDirectory": "/Users/eubenesa/code",
-  "git.path": "/usr/local/bin/git",
   "html.format.indentHandlebars": true,
   "html.format.wrapLineLength": 80,
   "jake.autoDetect": "off",
+  "js/ts.implicitProjectConfig.checkJs": true,
   "markdown.preview.fontFamily": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
   "markdown.preview.fontSize": 16,
   "markdown.preview.lineHeight": 1.5,
   "material-icon-theme.activeIconPack": "react_redux",
   "material-icon-theme.folders.theme": "classic",
-  "material-icon-theme.showUpdateMessage": false,
-  "material-icon-theme.showWelcomeMessage": false,
-  "npm.packageManager": "yarn",
-  "openInGitHub.gitHubDomain": "github.com",
+  "openInGitHub.gitHubDomain": "code.cargurus.com",
   "openInGitHub.providerType": "github",
-  // "prettier.requireConfig": true,
-  "scss.lint.boxModel": "warning",
-  "scss.lint.compatibleVendorPrefixes": "error",
-  "scss.lint.duplicateProperties": "error",
-  "scss.lint.emptyRules": "error",
-  "scss.lint.float": "warning",
-  "scss.lint.fontFaceProperties": "error",
-  "scss.lint.idSelector": "warning",
-  "scss.lint.ieHack": "error",
-  "scss.lint.important": "warning",
-  "scss.lint.importStatement": "warning",
-  "scss.lint.propertyIgnoredDueToDisplay": "error",
-  "scss.lint.universalSelector": "warning",
-  "scss.lint.unknownProperties": "error",
-  "scss.lint.unknownVendorSpecificProperties": "error",
-  "scss.lint.vendorPrefix": "error",
-  "scss.lint.zeroUnits": "error",
-  "sync.autoDownload": false,
-  "sync.autoUpload": true,
-  "sync.forceDownload": false,
-  "sync.gist": "f9ad414cdd898a274e3a07f003df7df7",
-  "sync.quietSync": false,
-  "sync.removeExtensions": true,
-  "sync.syncExtensions": true,
+  "security.workspace.trust.untrustedFiles": "open",
   "terminal.integrated.cursorBlinking": true,
-  "terminal.integrated.cursorStyle": "block",
-  "terminal.integrated.fontFamily": "'Fantasque Sans Mono', 'Source Code Pro for Powerline'",
+  "terminal.integrated.fontFamily": "'Operator Mono', 'Source Code Pro for Powerline', monospace",
   "terminal.integrated.fontSize": 16,
   "window.closeWhenEmpty": true,
-  "window.newWindowDimensions": "inherit",
-  "window.restoreWindows": "all",
+  "window.newWindowDimensions": "maximized",
   "window.title": "${rootName}${separator}${activeEditorMedium}${separator}${dirty}",
-  "window.zoomLevel": 0,
-  "workbench.colorTheme": "Framer Syntax",
-  "workbench.fontAliasing": "antialiased",
+  "workbench.colorTheme": "Moonlight II",
   "workbench.iconTheme": "material-icon-theme",
   "workbench.startupEditor": "newUntitledFile",
-  "[git-commit]": {
-    "editor.rulers": [
-      50,
-      72
-    ]
+  "files.associations": {
+    "COMMIT_EDITMSG": "git-commit"
   },
-  "editor.tokenColorCustomizations": {
-    "textMateRules": [
-      {
-        "scope": "text.html.markdown.journal.task.open.bullet",
-        "settings": {
-          "foreground": "#FFFF00"
-        }
-      },
-      {
-        "scope": "text.html.markdown.journal.task.open.marker",
-        "settings": {
-          "foreground": "#FFFF00"
-        }
-      },
-      {
-        "scope": "text.html.markdown.journal.task.open.keyword",
-        "settings": {
-          "fontStyle": "italic"
-        }
-      },
-      {
-        "scope": "text.html.markdown.journal.task.open.text",
-        "settings": {}
-      },
-      {
-        "scope": "text.html.markdown.journal.task.completed.keyword",
-        "settings": {
-          "fontStyle": "italic"
-        }
-      },
-      {
-        "scope": "text.html.markdown.journal.task.completed.marker",
-        "settings": {
-          "foreground": "#AAAAAA"
-        }
-      },
-      {
-        "scope": "text.html.markdown.journal.task.completed.text",
-        "settings": {
-          "foreground": "#AAAAAA"
-        }
-      },
-      {
-        "scope": "text.html.markdown.journal.task.completed.bullet",
-        "settings": {
-          "foreground": "#FFFF00"
-        }
-      },
-      {
-        "scope": "text.html.markdown.journal.memo.keyword",
-        "settings": {
-          "fontStyle": "italic"
-        }
-      },
-      {
-        "scope": "text.html.markdown.journal.memo.bullet",
-        "settings": {
-          "foreground": "#FFFF00"
-        }
-      },
-      {
-        "scope": "text.html.markdown.journal.scope",
-        "settings": {
-          "foreground": "#FFFF00"
-        }
-      },
-      {
-        "scope": "text.html.markdown.journal.link.keyword",
-        "settings": {
-          "fontStyle": "italic"
-        }
-      },
-      {
-        "scope": "text.html.markdown.journal.link.bullet",
-        "settings": {
-          "foreground": "#FFFF00"
-        }
-      }
-    ]
-  },
-  "journal.dev": false,
-  "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "editor.formatOnSaveMode": "modifications",
-  "editor.defaultFormatter": "esbenp.prettier-vscode"
+  "redhat.telemetry.enabled": true,
+  "prisma.showPrismaDataPlatformNotification": false
 }

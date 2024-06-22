@@ -1,3 +1,4 @@
+zstyle ':omz:alpha:lib:git' async-prompt no
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -73,13 +74,14 @@ COMPLETION_WAITING_DOTS="true"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   battery
+  bazel
   brew
   colored-man-pages
   colorize
   command-not-found
   copybuffer
-  copydir
   copyfile
+  copypath
   cp
   dircycle
   dirhistory
@@ -87,6 +89,8 @@ plugins=(
   dotenv
   emoji-clock
   emoji
+  emotty
+  encode64
   fancy-ctrl-z
   frontend-search
   git-auto-fetch
@@ -95,26 +99,29 @@ plugins=(
   gitignore
   history-substring-search
   history
+  isodate
   jira
   jsontools
+  keychain
   last-working-dir
   lighthouse
+  macos
   man
   node
   npm
   nvm
-  osx
   per-directory-history
-  # ssh-agent
+  ssh-agent
   sublime
   sudo
   systemd
+  timer
   urltools
   vscode
   web-search
   yarn
+  zsh-interactive-cd
   zsh-navigation-tools
-  zsh_reload
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -130,7 +137,7 @@ source $ZSH/oh-my-zsh.sh
 # if [[ -n $SSH_CONNECTION ]]; then
 #   export EDITOR='vim'
 # else
-#   export EDITOR='mvim'
+#   export EDITOR='nvim'
 # fi
 
 # Compilation flags
@@ -149,17 +156,26 @@ alias ls="ls -alGh"
 alias grbim="grbi master"
 alias moon="curl wttr.in/moon"
 alias npmcc="npm cache clean"
-alias npmOg="npmO -g"
-alias npmrei="rm -rf node_modules package-lock.json npm-debug.log && npmcc --force && npm i"
+# alias npmOg="npmO -g"
+alias npmrei="rm -rf node_modules npm-debug.log && npmcc --force && npm i"
 alias q="exit"
-alias reyarn="rm -rf node_modules yarn.lock yarn-error.log && ycc && y"
-alias update="cd && weather && omz update && bubu && brew outdated --cask; nvm ls-remote | grep 'Latest LTS\|v15.' && nvm use stable && npmOg"
-alias weather="curl wttr.in"
+alias reyarn="ycc && rm -rf node_modules yarn-error.log && y"
+alias update="cd && weather && omz update && bubu && brew outdated --cask && nvm ls-remote | grep 'Latest LTS\|v22.' && npmO -g"
+alias weather="curl wttr.in/\?m"
+
+# alias d2d="cd /Users/esa/cargurus/cg-main/cargurus-site-static/packages/cargurus-dealer-2-dealer"
+# alias dd-web="cd /Users/esa/cargurus/cg-main/cargurus-site-static/packages/dealer-dashboard-web"
+alias smc="cd /Users/esa/cargurus/cg-main/cargurus-site-static/packages/cargurus-wholesale-smc"
+alias wos="cd /Users/esa/cargurus/cg-main/cargurus-site-static/packages/cargurus-wholesale-offer-service"
 
 export PATH="/usr/local/opt/curl/bin:$PATH"
+export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
+export PATH="/usr/local/sbin:$PATH"
+export PATH="$HOME/cargurus/cg-main/cargurus-build/local/devbox-push:$PATH"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 autoload -U add-zsh-hook
 load-nvmrc() {
   local node_version="$(nvm version)"
@@ -184,14 +200,13 @@ load-nvmrc
 source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 if type brew &>/dev/null; then
-  FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
+  FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
 
   autoload -Uz compinit
   compinit
 fi
 
 source /usr/local/share/zsh-history-substring-search/zsh-history-substring-search.zsh
-source /usr/local/share/zsh-navigation-tools/zsh-navigation-tools.plugin.zsh
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # List of accounts to read the last tweet from, comma separated
